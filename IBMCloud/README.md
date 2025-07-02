@@ -18,7 +18,7 @@ export IBM_ACCOUNT_ID="32 character hexadecimal account ID"
 export ACCOUNT_NAME="account name"
 export IBM_API_KEY="IBM Classic Key"
 export IBM_API_USERNAME="IBM Classic User Name"
-export TAGS="cost-center:xyz, serivce-phase:some-phase, app-code:some-app"
+export TAGS="cost-center:xyz, service-phase:some-phase, app-code:some-app"
 podman run --rm --name cloud-governance \
 -e PUBLIC_CLOUD_NAME="IBM" \
 -e policy="tag_resources" \

@@ -6,4 +6,4 @@ metadata:
 data:
   PUBLIC_CLOUD_NAME: "IBM"
   policy: "tag_resources"
-  IBM_CUSTOM_TAGS_LIST: "cost-center:xyz, serivce-phase:some-phase, app-code:some-app"
+  IBM_CUSTOM_TAGS_LIST: "cost-center:xyz, service-phase:some-phase, app-code:some-app"
