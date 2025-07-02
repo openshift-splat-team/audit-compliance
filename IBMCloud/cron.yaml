@@ -1,0 +1,59 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  namespace: vsphere-infra-helpers
+  name: ibm-cloud-governance-cronjob
+spec:
+  schedule: "0 3 * * *" # Runs daily at 3:00 AM UTC (adjust as needed)
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: cloud-governance
+            image: quay.io/cloud-governance/cloud-governance:latest
+            imagePullPolicy: Always # Ensures you always get the latest image
+            env:
+            # Environment variables from the Secret
+            - name: IBM_CLOUD_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: ibm-cloud-governance-secret
+                  key: IBM_CLOUD_API_KEY
+            - name: account
+              valueFrom:
+                secretKeyRef:
+                  name: ibm-cloud-governance-secret
+                  key: account
+            - name: IBM_ACCOUNT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: ibm-cloud-governance-secret
+                  key: IBM_ACCOUNT_ID
+            - name: IBM_API_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: ibm-cloud-governance-secret
+                  key: IBM_API_USERNAME
+            - name: IBM_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: ibm-cloud-governance-secret
+                  key: IBM_API_KEY
+            # Environment variables from the ConfigMap
+            - name: PUBLIC_CLOUD_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: ibm-cloud-governance-config
+                  key: PUBLIC_CLOUD_NAME
+            - name: policy
+              valueFrom:
+                configMapKeyRef:
+                  name: ibm-cloud-governance-config
+                  key: policy
+            - name: IBM_CUSTOM_TAGS_LIST
+              valueFrom:
+                configMapKeyRef:
+                  name: ibm-cloud-governance-config
+                  key: IBM_CUSTOM_TAGS_LIST
+          restartPolicy: OnFailure
