@@ -1,6 +1,6 @@
 # Overview
 
-Tags resources in IBM Cloud by adhering to the chosen policy. See secret.yaml and config.yaml to configure account access secrets and configuration. See https://github.com/redhat-performance/cloud-governance/blob/main/README.md for more details on the capabilities of the 
+Tags resources in IBM Cloud by adhering to the chosen [policy](https://github.com/redhat-performance/cloud-governance/blob/main/POLICIES.md). See secret.yaml and config.yaml to configure account access secrets and configuration. See https://github.com/redhat-performance/cloud-governance/blob/main/README.md for more details on the capabilities of the 
 cloud-governance image.
 
 ## Running as a cron job
