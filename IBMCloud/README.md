@@ -1,13 +1,12 @@
 # Overview
 
-Tags resources in IBM Cloud by adhering to the chosen policy. See secret.yaml and config.yaml to configure account access secrets and configuration. See https://github.com/redhat-performance/cloud-governance/blob/main/README.mdfor more details on the capabilities of the 
-cloud-governance image.
+Tags resources in IBM Cloud by adhering to the chosen policy. See secret.yaml and config.yaml to configure account access secrets and configuration.
 
 ## Running as a cron job
 
 1. Modify `cron.yaml` to deploy to the namespace and job name you desire.
 2. Modify `secret.yaml` to define the access credentials and account.
-3. Modify `config.yaml` to define configuration.
+3. Modify `configmap.yaml` to define configuration.
 4. Apply manifests to the desired Kubernetes or OpenShift cluster.
 
 ## Running as a Shell Script
