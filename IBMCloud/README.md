@@ -41,7 +41,7 @@ To create an IBM Cloud API Key:
 To create an IBM Cloud Classic Infrastructure Key:
 ![alt text](image-2.png)
 
-The IBM Cloud user name is a combination of the short account number and your email address.  For example:
+The IBM_API_USERNAME is a combination of the short account number and your email address.  For example:
 
 ```
 228abcd_myemail@company.com
